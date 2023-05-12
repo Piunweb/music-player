@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <style>
+        .change{
+            overflow: hidden;
+        }
+        .change>section{
+            width: 500px;
+            height: 500px;
+            display: flex;
+
+        }
+        .change>section>img{
+            width: 600px;
+            height: 500px;
+            display: flex;
+            object-fit: cover;
+            
+        }
+        .change>section>img:nth-of-type(1){
+            width: 300px;
+            height: 500px;
+            display: flex;
+            object-fit: cover;
+            
+        }
+        .row{
+            width: 500px;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 100px auto;
+            /* background-color: black; */
+            position: relative;
+            overflow: hidden;
+            border: 5px solid black;
+        }
+        
+        .row>#line{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 500px;
+            height: 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgb(255, 255, 255);
+            z-index: 1;
+        }
+        .row>#line>.box{
+            margin: 2px;
+            animation: 5s linear alternate forwards infinite;
+        }
+        .row>#line>.box1{
+            width: 3px;
+            height: 8px;
+            background-color: black;
+        }
+        .row>#line>.box2{
+            width: 3px;
+            height: 10px;
+            background-color: black;
+        }
+        .row>#line>.box3{
+            width: 3px;
+            height: 5px;
+            background-color: black;
+            
+        }
+        .row>#line>.box4{
+            width: 3px;
+            height: 2px;
+            background-color: black;
+           
+        }
+        .row>#line>.box5{
+            width: 3px;
+            height: 6px;
+            background-color: black;
+            
+        }
+        .row>#line>.box6{
+            width: 3px;
+            height: 12px;
+            background-color: black;
+            
+        }
+        .row>#line>.box7{
+            width: 3px;
+            height: 5px;
+            background-color: black;
+
+        }
+        .row>#line>.box8{
+            width: 3px;
+            height: 7px;
+            background-color: black;
+            
+        }
+        .row>#line>.box9{
+            width: 3px;
+            height: 7px;
+            background-color: black;
+            
+        }
+        .row>#line>.box10{
+            width: 3px;
+            height: 7px;
+            background-color: black;
+           
+        }
+        .row>#line>.box11{
+            width: 3px;
+            height: 10px;
+            background-color: black;
+            
+        }
+        .row>#line>.box12{
+            width: 3px;
+            height: 4px;
+            background-color: black;
+            
+        }
+        .row>#line>.box13{
+            width: 3px;
+            height: 15px;
+            background-color: black;
+            
+        }
+        .row>#line>.box14{
+            width: 3px;
+            height: 5px;
+            background-color: black;
+            
+        }
+        .row>#line>.box15{
+            width: 3px;
+            height: 2px;
+            background-color: black;
+            
+        }
+        .row>#line>.box16{
+            width: 3px;
+            height: 8px;
+            background-color: black;
+           
+        }
+        .row>#line>.box17{
+            width: 3px;
+            height: 10px;
+            background-color: black;
+            
+        }
+        .row>#line>.box18{
+            width: 3px;
+            height: 18px;
+            background-color: black;
+            
+        }
+        .row>#line>.box18{
+            width: 3px;
+            height: 7px;
+            background-color: black;
+           
+        }
+        .row>#line>.box19{
+            width: 3px;
+            height: 5px;
+            background-color: black;
+          
+        }
+        .row>#line>.box20{
+            width: 3px;
+            height: 10px;
+            background-color: black;
+            
+        }
+        .row>#line>.box21{
+            width: 3px;
+            height: 3px;
+            background-color: black;
+
+        }
+        .row>img{
+            width: 500px;
+            height: 500px;
+            object-fit: cover;
+            position: absolute;
+            top: 10px;
+            left: 0;
+            /* border: 5px solid black; */
+        }
+        .container>.row>.button{
+            width: 500px;
+            height: 80px;
+            background-color: white;
+            position: absolute;
+            bottom: 0px;
+        }
+        .row>.button>.right{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            bottom: 20px;
+            right: 130px;
+            border-radius: 50%;
+            border: none;
+            background-color: white;
+        }
+        .row>.button>.left{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            bottom: 20px;
+            right: 310px;
+            border-radius: 50%;
+            border: none;
+            background-color: white;
+        }
+        .row>.button>.play{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            bottom: 20px;
+            right: 250px;
+            border-radius: 50%;
+            border: none;
+            background-color: white;
+        }
+        .row>.button>.left>i{
+            font-size: 50px;
+            position: absolute;
+            bottom: -10px;
+            right: 0px;
+        }
+        .row>.button>.right>i{
+            font-size: 50px;
+            position: absolute;
+            bottom: -10px;
+            right: 0px;
+        }
+        .row>.button>.play>i{
+            font-size: 50px;
+            position: absolute;
+            bottom: -10px;
+            right: 0px;
+        }
+        .row>.button>.stop{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            bottom: 20px;
+            right: 190px;
+            border-radius: 50%;
+            border: none;
+            background-color: white;
+        }
+        .row>.button>.stop>i{
+            font-size: 50px;
+            position: absolute;
+            bottom: -10px;
+            right: 0px;
+        }
+        @keyframes piu{
+            0%{
+                height: 30px;
+            }
+            10%{
+                height:10px;
+            }
+            20%{
+                height:10px;
+            }
+            30%{
+                height: 10px;
+            }
+            40%{
+                height: 5px;
+            }
+            50%{
+                height: 0px;
+            }
+            60%{
+                heigh: 0px;
+            }
+            70%{
+                height: 12px;
+            }
+            80%{
+                height:22px;
+            }
+            90%{
+                height: 0px;
+            }
+            100%{
+                height: 22px;
+            }}
+        @keyframes piu2{
+            0%{
+                height: 30px;
+            }
+            10%{
+                height:10px;
+            }
+            20%{
+                height:0px;
+            }
+            30%{
+                height: 30px;
+            }
+            40%{
+                height: 4px;
+            }
+            50%{
+                height: 15px;
+            }
+            60%{
+                heigh: 20px;
+            }
+            70%{
+                height: 0px;
+            }
+            80%{
+                height:22px;
+            }
+            90%{
+                height: 0px;
+            }
+            100%{
+                height: 2px;
+            }
+        }
+        @keyframes piu3{
+            0%{
+                height: 30px;
+            }
+            10%{
+                height:10px;
+            }
+            20%{
+                height:0px;
+            }
+            30%{
+                height: 20px;
+            }
+            40%{
+                height: 0;
+            }
+            50%{
+                height: 15px;
+            }
+            60%{
+                heigh: 0;
+            }
+            70%{
+                height: 0px;
+            }
+            80%{
+                height:2px;
+            }
+            90%{
+                height: 8px;
+            }
+            100%{
+                height: 20px;
+            }
+        }
+
+            @keyframes piu4 {
+            0%{
+                height: 2px;
+            }
+            100%{
+                height: 0px;
+            }  
+            }
+             
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="row">
+    <div id="line">
+        <div id="music1" class="box box1"></div>
+        <div id="music2" class="box box2"></div>
+        <div id="music3" class="box box3"></div>
+        <div id="music4" class="box box4"></div>
+        <div id="music5" class="box box5"></div>
+        <div id="music6" class="box box6"></div>
+        <div id="music7" class="box box7"></div>
+        <div id="music8" class="box box8"></div>
+        <div id="music9" class="box box9"></div>
+        <div id="music10" class="box box10"></div>
+        <div id="music11" class="box box11"></div>
+        <div id="music12" class="box box12"></div>
+        <div id="music13" class="box box13"></div>
+        <div id="music14" class="box box14"></div>
+        <div id="music15" class="box box15"></div>
+        <div id="music16" class="box box16"></div>
+        <div id="music17" class="box box17"></div>
+        <div id="music18" class="box box18"></div>
+        <div id="music19" class="box box19"></div>
+        <div id="music20" class="box box20"></div>
+        <div id="music21" class="box box21"></div>
+    </div>
+    <img  id="aud1" src="./8.avif" alt="">
+    <audio id="aud" src="./0bikalam download1music.ir (1).mp3" type="audio/mpeg"></audio>
+    <div class="change">
+        <section onclick="thumb(this, 0)">
+        <img src="./8.avif" alt="">
+        <audio src="./2.mp3"></audio>
+        </section>
+        <section onclick="thumb(this, 1)">
+        <img src="./3.jpg" alt="">
+        <audio src="./3.mp3"></audio>
+        </section>
+        <section onclick="thumb(this, 2)">
+         <img src="./4.jpg" alt="">
+        <audio src="./4.mp3"></audio>
+        </section>
+        <section onclick="thumb(this, 3)">
+        <img src="./5.jpg" alt="">
+        <audio src="./5.mp3"></audio>
+        </section>
+        <section onclick="thumb(this, 4)">
+        <img src="./7.jpg" alt="">
+        <audio src="./6.mp3"></audio>
+        </section>
+    </div>
+    <div class="button">
+    <button class="play" onclick="play()"><i class="bi bi-play-circle"></i></button>
+    <button class="stop" onclick="stop()"><i class="bi bi-pause-circle"></i></button>
+    <button class="right" onclick="_right()"><i class="bi bi-arrow-right-circle"></i></button>
+    <button class="left" onclick="_left()"><i class="bi bi-arrow-left-circle"></i></button>
+    </div>
+    </div></div>
+</body>
+<script>
+    let turn=0
+    let _audio= document.querySelectorAll('.change>section')
+  function thumb(self,num){
+    let x=self.children
+    _src=x[0].getAttribute('src')
+    _src2=x[1].getAttribute('src')
+    document.getElementById('aud').setAttribute('src', _src2)
+    document.getElementById('aud1').setAttribute('src', _src)
+    turn=num
+    play()
+  }
+  function _right() {
+            if (turn < ((_audio.length)-1)) {
+                turn++
+            } else {
+                turn = 0
+            }
+            _piu()
+            play()
+        }
+        function _left(){
+            if (turn > 0) {
+                turn--
+            } else {
+                turn = (_figure.length)-1
+            }
+            _piu()
+            play()
+        }
+        function _piu(){
+            x = _audio[turn].children
+            x1 = x[0].getAttribute('src')
+            x2 = x[1].getAttribute('src')
+            document.getElementById('aud').setAttribute('src', x2)
+            document.getElementById('aud1').setAttribute('src', x1)
+        }
+   function play(){
+    document.getElementById('aud').play()
+    document.getElementsByClassName('box')[0].style.animationName = 'piu'
+    document.getElementsByClassName('box')[1].style.animationName = 'piu2'
+    document.getElementsByClassName('box')[2].style.animationName = 'piu'
+    document.getElementsByClassName('box')[3].style.animationName = 'piu2'
+    document.getElementsByClassName('box')[4].style.animationName = 'piu3'
+    document.getElementsByClassName('box')[5].style.animationName = 'piu2'
+    document.getElementsByClassName('box')[6].style.animationName = 'piu'
+    document.getElementsByClassName('box')[7].style.animationName = 'piu2'
+    document.getElementsByClassName('box')[8].style.animationName = 'piu2'
+    document.getElementsByClassName('box')[9].style.animationName = 'piu2'
+    document.getElementsByClassName('box')[10].style.animationName = 'piu'
+    document.getElementsByClassName('box')[11].style.animationName = 'piu3'
+    document.getElementsByClassName('box')[12].style.animationName = 'piu'
+    document.getElementsByClassName('box')[13].style.animationName = 'piu2'
+    document.getElementsByClassName('box')[14].style.animationName = 'piu'
+    document.getElementsByClassName('box')[15].style.animationName = 'piu2'
+    document.getElementsByClassName('box')[16].style.animationName = 'piu'
+    document.getElementsByClassName('box')[17].style.animationName = 'piu3'
+    document.getElementsByClassName('box')[18].style.animationName = 'piu'
+    document.getElementsByClassName('box')[19].style.animationName = 'piu2'
+    document.getElementsByClassName('box')[20].style.animationName = 'piu'
+    document.getElementsByClassName('box')[21].style.animationName = 'piu3'
+   }
+
+
+   function stop(){
+    document.getElementById('aud').pause()
+    document.getElementsByClassName('box')[0].style.animationName = 'piu4'
+    document.getElementsByClassName('box')[1].style.animationName = 'piu4'
+    document.getElementsByClassName('box')[2].style.animationName = 'piu4'
+    document.getElementsByClassName('box')[3].style.animationName = 'piu4'
+    document.getElementsByClassName('box')[4].style.animationName = 'piu4'
+    document.getElementsByClassName('box')[5].style.animationName = 'piu4'
+    document.getElementsByClassName('box')[6].style.animationName = 'piu4'
+    document.getElementsByClassName('box')[7].style.animationName = 'piu4'
+    document.getElementsByClassName('box')[8].style.animationName = 'piu4'
+    document.getElementsByClassName('box')[9].style.animationName = 'piu4'
+    document.getElementsByClassName('box')[10].style.animationName = 'piu4'
+    document.getElementsByClassName('box')[11].style.animationName = 'piu4'
+    document.getElementsByClassName('box')[12].style.animationName = 'piu4'
+    document.getElementsByClassName('box')[13].style.animationName = 'piu4'
+    document.getElementsByClassName('box')[14].style.animationName = 'piu4'
+    document.getElementsByClassName('box')[15].style.animationName = 'piu4'
+    document.getElementsByClassName('box')[16].style.animationName = 'piu4'
+    document.getElementsByClassName('box')[17].style.animationName = 'piu4'
+    document.getElementsByClassName('box')[18].style.animationName = 'piu4'
+    document.getElementsByClassName('box')[19].style.animationName = 'piu4'
+    document.getElementsByClassName('box')[20].style.animationName = 'piu4'
+    document.getElementsByClassName('box')[21].style.animationName = 'piu4'
+   }
+</script>
+</html>
